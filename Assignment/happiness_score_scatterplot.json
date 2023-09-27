@@ -1,0 +1,83 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Happiness score relationship",
+    "width": 300,
+    "height": 300,
+    "padding": 10,
+  
+    "data": {
+      "url": "dataset/WHR_2023.csv"
+    },
+    "transform": [{
+      "fold": [ "gdp_per_capita", 
+      "social_support", 
+      "healthy_life_expectancy", 
+      "freedom_to_make_life_choices", 
+      "generosity", 
+      "perceptions_of_corruption"],
+      "as": ["attribute", "value"]
+    },
+    {"filter": "datum.attribute == selectedY"},
+    {
+      "calculate": "datum.attribute === 'gdp_per_capita' ? 'GDP per Capita' : datum.attribute === 'social_support' ? 'Social Support' : datum.attribute === 'healthy_life_expectancy' ? 'Life Expectancy' : datum.attribute === 'freedom_to_make_life_choices' ? 'Freedom' : datum.attribute === 'generosity' ? 'Generosity' : datum.attribute === 'perceptions_of_corruption' ? 'Corruption' : 'Unknown'",
+      "as": "custom_title"
+    }
+  ],
+
+  "params": [
+      {
+          "name": "selectedY",
+          "value": "gdp_per_capita",
+          "bind": {
+            "input": "select",
+            "options": [
+              "gdp_per_capita", 
+              "social_support", 
+              "healthy_life_expectancy", 
+              "freedom_to_make_life_choices", 
+              "generosity", 
+              "perceptions_of_corruption"
+            ],
+            "labels": [
+              "GDP per Capita",
+              "Social Support",
+              "Life Expectancy",
+              "Freedom",
+              "Generosity",
+              "Perception of Corruption"
+              
+            ],  
+            "name": "Select Y data: "
+          }
+      }
+    ],
+    "layer":[
+      
+      {
+        "mark": {"type": "text", "fontSize": 11, "align": "right","fontWeight":"normal"},
+        "encoding": {
+          "x": {"value":-35},
+          "y": {"value":100},
+          "text": {"field": "custom_title", "type": "nominal"},
+          "angle": {"value": -90}
+        }
+      },
+      {
+        "mark": "point",
+        "encoding": {
+            "x": {"field": "happiness_score", "type": "quantitative"},
+            "y": {
+              "field": "value", 
+              "type": "quantitative",
+              "title" : null
+
+          }
+        }
+      }
+    ],
+    "config": {
+      "font": "sans-serif"
+    }
+ 
+    
+}

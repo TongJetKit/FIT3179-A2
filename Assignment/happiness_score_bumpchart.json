@@ -1,0 +1,40 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "dataset/dataset_clean.csv"
+  },
+  "transform": [
+    {
+      "aggregate": [
+        {"op": "max", "field": "happiness_score", "as": "max_scores"}
+      ],
+      "groupby": ["year", "region"]
+    },
+    {
+      "window": [
+        {"op": "rank", "as": "rank"}
+      ],
+      "sort": [{"field": "happiness_score", "order": "descending"}]
+    }
+  ],
+  "mark": {"type": "line", "interpolate": "basis"},
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "ordinal",
+      "title": "Year",
+      "sort": "ascending"
+    },
+    "y": {
+      "field": "rank",
+      "type": "quantitative",
+      "title": "Rank",
+      "sort": "descending"
+    },
+    "color": {"field": "region", "type": "nominal"}
+  },
+  "config": {
+    "view": {"stroke": "transparent"},
+    "axis": {"labelOverlap": "parity"}
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 600,
+  "height": 400,
+  "data": {
+    "url": "dataset/WHR_2023.csv"
+  },
+  "transform": [
+    {"fold": ["gdp_per_capita", "social_support", "healthy_life_expectancy", "freedom_to_make_life_choices", "generosity", "perceptions_of_corruption"], "as": ["factor", "value"]}
+  ],
+  "mark": "bar",
+  "encoding": {
+    "y": {"field": "region", "type": "nominal", "title": "World Region"},
+    "x": {"aggregate": "sum", "field": "value", "type": "quantitative", "title": "Sum of Normalized Values"},
+    "color": {"field": "factor", "type": "nominal", "title": "Factor"},
+    "order": {"field": "factor", "type": "nominal"}
+  },
+  "config": {
+    "background": "#F3FAF9",
+    "axis": {
+      "titleColor": "#527298",
+      "labelColor": "#527298",
+      "labelFont": "sans-serif",
+      "labelFontSize": 12,
+      "titleFontSize": 15
+    }
+  }
+}
+
+
+
+
