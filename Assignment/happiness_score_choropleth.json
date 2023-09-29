@@ -4,9 +4,9 @@
   "width": 800,
   "height": 400,
   "data": {
-    "url": "https://raw.githubusercontent.com/TongJetKit/FIT3179-A2/main/Assignment/dataset/WHR_2023.csv"  
+    "url": "https://raw.githubusercontent.com/TongJetKit/FIT3179-A2/main/Assignment/dataset/dataset_clean.csv"  
   },
-
+  "projection": {"type": "equalEarth"},
   "params": [
       {
         "name": "Year_selection",
@@ -53,9 +53,10 @@
   
           "key": "properties.NAME" 
         }
-      }
+      },
+      {"filter": "datum.year == Year_selection"}
     ],
-    "projection": {"type": "equalEarth"},
+   
     "mark": "geoshape",
     "encoding": {
       "color": {
