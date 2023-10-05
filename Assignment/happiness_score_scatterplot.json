@@ -8,6 +8,7 @@
     "data": {
       "url": "dataset/WHR_2023.csv"
     },
+    
     "transform": [{
       "fold": [ "gdp_per_capita", 
       "social_support", 
@@ -25,6 +26,7 @@
   ],
 
   "params": [
+      
       {
           "name": "selectedY",
           "value": "gdp_per_capita",
@@ -52,17 +54,8 @@
       }
     ],
     "layer":[
-      
       {
-        "mark": {"type": "text", "fontSize": 11, "align": "right","fontWeight":"normal"},
-        "encoding": {
-          "x": {"value":-35},
-          "y": {"value":100},
-          "text": {"field": "custom_title", "type": "nominal"},
-          "angle": {"value": -90}
-        }
-      },
-      {
+
         "mark": "point",
         "encoding": {
             "x": {"field": "happiness_score", "type": "quantitative"},
@@ -70,10 +63,23 @@
               "field": "value", 
               "type": "quantitative",
               "title" : null
-
-          }
+            },
+            "tooltip": [
+              {"field": "value", "type": "nominal", "title":"Selected Y"},
+              {"field": "happiness_score", "type": "quantitative", "title": "Happiness Score"}
+            ]
+        }
+      },
+      {
+        
+        "mark": {"type": "text", "fontSize": 11, "align": "right","fontWeight":"normal", "x": -35},
+        "encoding": {
+          "y": {"value":100},
+          "text": {"field": "custom_title", "type": "nominal"},
+          "angle": {"value": -90}
         }
       }
+        
     ],
     "config": {
       "font": "sans-serif"
