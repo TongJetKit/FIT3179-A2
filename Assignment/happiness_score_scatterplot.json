@@ -56,7 +56,7 @@
     "layer":[
       {
 
-        "mark": "point",
+        "mark": {"type": "point", "filled": true},
         "encoding": {
             "x": {"field": "happiness_score", "type": "quantitative"},
             "y": {
