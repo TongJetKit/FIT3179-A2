@@ -48,5 +48,10 @@ vegaEmbed('#stackedbarchart', stackedbarchart).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
 }).catch(console.error);
 
+var bumpchart = "https://raw.githubusercontent.com/TongJetKit/FIT3179-A2/main/Assignment/happiness_score_bumpchart.json"
+vegaEmbed('#bumpchart', bumpchart).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+}).catch(console.error);
+
 
 
