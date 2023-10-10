@@ -1,37 +1,29 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "data": {
-    "url": "dataset/dataset_clean.csv"
+    "url": "https://raw.githubusercontent.com/TongJetKit/FIT3179-A2/main/Assignment/dataset/dataset_clean.csv"
   },
   "transform": [
-    {
-      "aggregate": [
-        {"op": "max", "field": "happiness_score", "as": "max_scores"}
-      ],
-      "groupby": ["year", "region"]
-    },
-    {
-      "window": [
-        {"op": "rank", "as": "rank"}
-      ],
-      "sort": [{"field": "happiness_score", "order": "descending"}]
-    }
+      {
+        "window": [{"op": "rank", "as": "ranking"}],
+        "groupby": ["Year"],
+        "sort": [{"field": "Happiness Score", "order": "descending"}]
+      }
   ],
-  "mark": {"type": "line", "interpolate": "basis"},
+  "mark": {"type": "line", "orient": "vertical"},
   "encoding": {
     "x": {
-      "field": "year",
+      "field": "Year",
       "type": "ordinal",
       "title": "Year",
       "sort": "ascending"
     },
     "y": {
-      "field": "rank",
-      "type": "quantitative",
-      "title": "Rank",
-      "sort": "descending"
+      "field": "ranking",
+      "type": "ordinal",
+      "title": "Rank"
     },
-    "color": {"field": "region", "type": "nominal"}
+    "color": {"field": "Country", "type": "nominal"}
   },
   "config": {
     "view": {"stroke": "transparent"},
