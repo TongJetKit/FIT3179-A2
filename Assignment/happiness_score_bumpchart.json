@@ -4,13 +4,17 @@
     "url": "https://raw.githubusercontent.com/TongJetKit/FIT3179-A2/main/Assignment/dataset/dataset_clean.csv"
   },
   "transform": [
+    {
+      "filter": "datum.Country == 'Australia' || datum.Country == 'New Zealand' || datum.Country == 'Malaysia' || datum.Country == 'Italy' || datum.Country == 'China' || datum.Country == 'Dominican Republic' || datum.Country == 'United States of America' || datum.Country == 'Mozambique' || datum.Country == 'Serbia' || datum.Country == 'Bolivia' "
+    },
       {
         "window": [{"op": "rank", "as": "ranking"}],
         "groupby": ["Year"],
         "sort": [{"field": "Happiness Score", "order": "descending"}]
       }
+      
   ],
-  "mark": {"type": "line", "orient": "vertical"},
+  "mark": {"type": "line", "orient": "vertical", "point":true},
   "encoding": {
     "x": {
       "field": "Year",

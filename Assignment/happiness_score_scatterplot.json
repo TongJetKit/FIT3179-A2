@@ -6,79 +6,73 @@
     "padding": 10,
   
     "data": {
-      "url": "dataset/WHR_2023.csv"
+      "url": "https://raw.githubusercontent.com/TongJetKit/FIT3179-A2/main/Assignment/dataset/dataset_clean.csv"
     },
     
-    "transform": [{
-      "fold": [ "gdp_per_capita", 
-      "social_support", 
-      "healthy_life_expectancy", 
-      "freedom_to_make_life_choices", 
-      "generosity", 
-      "perceptions_of_corruption"],
-      "as": ["attribute", "value"]
-    },
-    {"filter": "datum.attribute == selectedY"},
-    {
-      "calculate": "datum.attribute === 'gdp_per_capita' ? 'GDP per Capita' : datum.attribute === 'social_support' ? 'Social Support' : datum.attribute === 'healthy_life_expectancy' ? 'Life Expectancy' : datum.attribute === 'freedom_to_make_life_choices' ? 'Freedom' : datum.attribute === 'generosity' ? 'Generosity' : datum.attribute === 'perceptions_of_corruption' ? 'Corruption' : 'Unknown'",
-      "as": "custom_title"
-    }
-  ],
-
-  "params": [
-      
+    "transform": [
+      {"filter": "datum.Year == '2023'"},
       {
-          "name": "selectedY",
-          "value": "gdp_per_capita",
-          "bind": {
-            "input": "select",
-            "options": [
-              "gdp_per_capita", 
-              "social_support", 
-              "healthy_life_expectancy", 
-              "freedom_to_make_life_choices", 
-              "generosity", 
-              "perceptions_of_corruption"
-            ],
-            "labels": [
-              "GDP per Capita",
-              "Social Support",
-              "Life Expectancy",
-              "Freedom",
-              "Generosity",
-              "Perception of Corruption"
-              
-            ],  
-            "name": "Select Y data: "
-          }
-      }
-    ],
-    "layer":[
-      {
-
-        "mark": {"type": "point", "filled": true},
-        "encoding": {
-            "x": {"field": "happiness_score", "type": "quantitative"},
-            "y": {
-              "field": "value", 
-              "type": "quantitative",
-              "title" : null
-            },
-            "tooltip": [
-              {"field": "value", "type": "nominal", "title":"Selected Y"},
-              {"field": "happiness_score", "type": "quantitative", "title": "Happiness Score"}
-            ]
-        }
+        "fold": ["GDP per Capita", "Social Support", "Life Expectancy", "Freedom", "Generosity", "Perceptions of Corruption"],
+        "as": ["attribute", "value"]
       },
-      {
+      {"filter": "datum.attribute == selectedY"}
+      
+      
+    ],
+
+    "params": [
         
-        "mark": {"type": "text", "fontSize": 11, "align": "right","fontWeight":"normal", "x": -35},
-        "encoding": {
-          "y": {"value":100},
-          "text": {"field": "custom_title", "type": "nominal"},
-          "angle": {"value": -90}
+        {
+            "name": "selectedY",
+            "value": "GDP per Capita",
+            "bind": {
+              "input": "select",
+              "options": [
+                "GDP per Capita", 
+                "Social Support", 
+                "Life Expectancy",
+                "Freedom", 
+                "Generosity", 
+                "Perceptions of Corruption"
+              ],
+              "labels": [
+                "GDP per Capita",
+                "Social Support",
+                "Life Expectancy",
+                "Freedom",
+                "Generosity",
+                "Perception of Corruption"
+              ],  
+              "name": "Select Y data: "
+            }
         }
-      }
+      ],
+      "layer":[
+        {
+
+          "mark": {"type": "point", "filled": true},
+          "encoding": {
+              "x": {"field": "Happiness Score", "type": "quantitative"},
+              "y": {
+                "field": "value", 
+                "type": "quantitative",
+                "title" : null
+              },
+              "tooltip": [
+                {"field": "value", "type": "nominal", "title":"Selected Y"},
+                {"field": "Happiness Score", "type": "quantitative"}
+              ]
+          }
+        },
+        {
+          
+          "mark": {"type": "text", "fontSize": 13, "align": "right","fontWeight":"normal", "x": -35},
+          "encoding": {
+            "y": {"value":100},
+            "text": {"field": "attribute", "type": "nominal"},
+            "angle": {"value": -90}
+          }
+        }
         
     ],
     "config": {

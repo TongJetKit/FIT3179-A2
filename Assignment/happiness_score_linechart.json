@@ -3,15 +3,15 @@
     "width": 400,  
     "height": 400,
     "data": {
-      "url": "dataset/dataset_clean.csv"  
+      "url": "https://raw.githubusercontent.com/TongJetKit/FIT3179-A2/main/Assignment/dataset/dataset_clean.csv" 
     },
     "transform": [{
-        "filter": "datum.country == 'Australia' || datum.country == 'New Zealand' || datum.country == 'Malaysia' || datum.country == 'Italy' || datum.country == 'China' || datum.country == 'Dominican Republic' || datum.country == 'United States of America' || datum.country == 'Mozambique' || datum.country == 'Serbia' || datum.country == 'Bolivia' "
+        "filter": "datum.Country == 'Australia' || datum.Country == 'New Zealand' || datum.Country == 'Malaysia' || datum.Country == 'Italy' || datum.Country == 'China' || datum.Country == 'Dominican Republic' || datum.Country == 'United States of America' || datum.Country == 'Mozambique' || datum.Country == 'Serbia' || datum.Country == 'Bolivia' "
     }],
     "params":[
         {
         "name": "country_highlight",
-        "select": {"type": "point", "fields": ["country"]},
+        "select": {"type": "point", "fields": ["Country"]},
         "bind": "legend"
         }
     ],
@@ -21,14 +21,13 @@
         "point": true
     },
     "encoding": {
-      "x": {"field": "year", "type": "ordinal", "title": "Year"},
+      "x": {"field": "Year", "type": "ordinal", "title": "Year"},
       "y": {
-        "field": "happiness_score", 
+        "field": "Happiness Score", 
         "type": "quantitative", 
-        "title": "Happiness Score",
         "scale": {"domain": [3, 10]}
       },
-      "color": {"field": "country", "type": "nominal", "title": "Country"},
+      "color": {"field": "Country", "type": "nominal"},
       "opacity": {
         "condition": {"param": "country_highlight", "value": 1},
         "value": 0.01

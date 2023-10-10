@@ -4,7 +4,7 @@
     "width": 600,
     "height": 400,
     "data": {
-        "url": "dataset/WHR_2023.csv"
+        "url": "https://raw.githubusercontent.com/TongJetKit/FIT3179-A2/main/Assignment/dataset/dataset_clean.csv"
     },
     "params": [
         {
@@ -362,17 +362,15 @@
     ],
         
     "transform": [
+        {"filter": "datum.Year == '2023'"},
         {
-            "filter": "datum.country == Country_selection"
+            "filter": "datum.Country == Country_selection"
         },
         
         {
-            "fold": ["gdp_per_capita", "social_support", "healthy_life_expectancy", "freedom_to_make_life_choices", "generosity", "perceptions_of_corruption"],
+            "fold": ["GDP per Capita", "Social Support", "Life Expectancy", "Freedom", "Generosity", "Perceptions of Corruption"],
+
             "as": ["attribute", "value"]
-        },
-        {
-            "calculate": "datum.attribute === 'gdp_per_capita' ? 'GDP per capita' : datum.attribute === 'social_support' ? 'Social Support' : datum.attribute === 'healthy_life_expectancy' ? 'Life Expectancy' : datum.attribute === 'freedom_to_make_life_choices' ? 'Freedom' : datum.attribute === 'generosity' ? 'Generosity' : datum.attribute === 'perceptions_of_corruption' ? 'Corruption' : 'Unknown'",
-            "as": "custom_title"
         }
         
       
@@ -383,15 +381,13 @@
             "field": "attribute",
             "type": "nominal", 
             "axis": {
-                "labelAngle": 0, 
-                "values": ["gdp_per_capita", "social_support", "healthy_life_expectancy", "freedom_to_make_life_choices", "generosity", "perceptions_of_corruption"],
-                "labelExpr": "datum.value === 'gdp_per_capita' ? 'GDP per capita' : datum.value === 'social_support' ? 'Social Support' : datum.value === 'healthy_life_expectancy' ? 'Life Expectancy' : datum.value === 'freedom_to_make_life_choices' ? 'Freedom' : datum.value === 'generosity' ? 'Generosity' : datum.value === 'perceptions_of_corruption' ? 'Corruption' : 'Unknown'"
+                "labelAngle": 0
               },
             "title": "Attribute"
         },
      "y": {"field": "value", "type": "quantitative", "title": "Value"},
      "tooltip": [
-        {"field": "custom_title", "type": "ordinal", "title":"Factor"},
+        {"field": "attribute", "type": "ordinal", "title":"Factor"},
         {"field": "value", "type": "quantitative", "title": "Value"}
       ]
     }

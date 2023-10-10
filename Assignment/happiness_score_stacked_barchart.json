@@ -2,24 +2,57 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 600,
   "height": 400,
-  "resolve": {"scale": {"color": "independent"}},
+  "resolve": {"scale": {"color": "shared","y":"shared"}},
   "data": {
     "url": "https://raw.githubusercontent.com/TongJetKit/FIT3179-A2/main/Assignment/dataset/dataset_clean.csv"
   },
   "transform": [
     {"filter": "datum.Year == '2023'"},
-    {"fold": ["GDP per Capita", "Social Support", "Life Expectancy", "Freedom", "Generosity", "Perceptions of Corruption"], "as": ["factor", "value"]}
+    {"fold": ["GDP per Capita", "Social Support", "Life Expectancy", "Freedom", "Generosity", "Perceptions of Corruption"], "as": ["factor", "value"]},
+    {"filter":{"param": "highlight"}}
   ],
+
+  
   "layer":[
     {
+      "params":[
+        {
+        "name": "highlight",
+        "select": {"type": "point", "fields": ["factor"]},
+        "bind": "legend"
+        }
+      ],
+      
+      
       "mark": "bar",
       "encoding": {
-        "x": {"aggregate": "sum", "field": "value", "type": "quantitative", "title": "Value","stack": "zero"},
+        "x": {"aggregate": "sum", "field": "value", "type": "quantitative", "title": "Value","stack": "zero" },
         "y": {"field": "Region", "type": "nominal", "title": "World Region"},
-        "color": {"field": "factor", "type": "nominal", "title": "Factor"}
+        "color": {"field": "factor", "type": "nominal", "title": "Factor","scale": {
+          "domain": [
+            "GDP per Capita", 
+            "Social Support", 
+            "Life Expectancy", 
+            "Freedom", 
+            "Generosity", 
+            "Perceptions of Corruption"
+            ],
+          "range": [
+            "#445D48",
+            "#F3DEBA",
+            "#4F709C",
+            "#a6cee3",
+            "#CEDEBD",
+            "#C70039"
+          ] 
+        }}
+      
       }
     },
-    {"mark": {"type": "text", "dx": -15, "dy": 3, "color":"white"},
+    {
+     
+      
+      "mark": {"type": "text", "dx": -15, "dy": 3, "color":"white"},
       "encoding": {
         "x": {"aggregate": "sum", "field": "value", "type": "quantitative","stack": "zero"},
         "y": {"field": "Region", "type": "nominal"},
@@ -42,7 +75,7 @@
       "titleColor": "#527298",
       "labelColor": "#527298",
       "labelFont": "sans-serif",
-      "labelFontSize": 12,
+      "labelFontSize": 13,
       "titleFontSize": 15
     }
   }
