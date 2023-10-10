@@ -3,6 +3,8 @@
   "data": {
     "url": "https://raw.githubusercontent.com/TongJetKit/FIT3179-A2/main/Assignment/dataset/dataset_clean.csv"
   },
+  "width": 500,
+  "height": 500,
   "transform": [
     {
       "filter": "datum.Country == 'Australia' || datum.Country == 'New Zealand' || datum.Country == 'Malaysia' || datum.Country == 'Italy' || datum.Country == 'China' || datum.Country == 'Dominican Republic' || datum.Country == 'United States of America' || datum.Country == 'Mozambique' || datum.Country == 'Serbia' || datum.Country == 'Bolivia' "
