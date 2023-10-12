@@ -96,7 +96,7 @@
           "color": {
             "field": "Generosity",  
             "type": "quantitative",
-            "scale": {"type": "linear", "scheme":"yellowgreen"}
+            "scale": {"type": "linear", "scheme":"oranges"}
           },
           "tooltip": [
             {"field": "properties.NAME", "type": "nominal", "title": "Country"},

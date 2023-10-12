@@ -96,7 +96,7 @@
           "color": {
             "field": "Freedom",  
             "type": "quantitative",
-            "scale": {"type": "linear", "scheme":"blues"}
+            "scale": {"type": "linear", "scheme":"purples"}
           },
           "tooltip": [
             {"field": "properties.NAME", "type": "nominal", "title": "Country"},

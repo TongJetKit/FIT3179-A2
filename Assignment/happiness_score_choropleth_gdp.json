@@ -96,7 +96,7 @@
           "color": {
             "field": "GDP per Capita",  
             "type": "quantitative",
-            "scale": {"type": "linear", "scheme":"reds"}
+            "scale": {"type": "linear", "scheme":"goldred"}
           },
           "tooltip": [
             {"field": "properties.NAME", "type": "nominal", "title": "Country"},
