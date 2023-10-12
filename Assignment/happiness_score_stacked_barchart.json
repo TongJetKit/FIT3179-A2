@@ -38,27 +38,31 @@
             "Perceptions of Corruption"
             ],
           "range": [
-            "#445D48",
-            "#3E001F",
-            "#213363",
-            "#4F709C",
-            "#CEDEBD",
-            "#C70039"
+            "#FFD700",
+            "#87CEFA",
+            "#00FF00",
+            "#713ABE",
+            "#FFA500",
+            "#FF0000"
           ] 
-        }}
+        }},
+        "tooltip": [
+          {"field": "factor", "type": "ordinal", "title": "Factor"},
+          {"field":"value","aggregate": "sum", "type": "quantitative", "title": "Value"}
+        ]
       
       }
     },
     {
      
       
-      "mark": {"type": "text", "dx": -15, "dy": 3, "color":"white"},
+      "mark": {"type": "text", "dx": -15, "dy": 3, "color":"black"},
       "encoding": {
-        "x": {"aggregate": "sum", "field": "value", "type": "quantitative","stack": "zero"},
+        "x": {"aggregate": "sum", "field": "value", "type": "quantitative","stack":"zero"},
         "y": {"field": "Region", "type": "nominal"},
         "detail": {"type": "nominal", "field": "factor"},
         "text": { "condition": {
-          "test": "datum.sum_value > 5",
+          "test": "datum.sum_value > 3.5",
           "type": "quantitative",
           "aggregate": "sum",
           "field": "value",
