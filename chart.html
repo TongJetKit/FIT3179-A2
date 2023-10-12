@@ -6,6 +6,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+    <script src="https://kit.fontawesome.com/8979972d22.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="Assignment/assets/css/chart.css" />
 
     <title>Vega-lite Graph </title>
@@ -19,6 +20,7 @@
             <!-- Logo -->
                 <h1 id="logo">WORLD HAPPINESS REPORT</h1>
                 <p>To review the state of happiness in the world today.</p>
+                
 
         </div>
     </section>
@@ -38,6 +40,7 @@
                         </header>
                         <p>GDP per Capita is the measure of a country's economic output per person 
                             <strong>divided by its population</strong>.</p>
+                            
                     </section> 
                 </div>
                 
@@ -157,6 +160,12 @@
              Viverra adipiscing at in tellus integer. 
              Sagittis vitae et leo duis ut diam. 
              Nisi vitae suscipit tellus mauris a diam.
+              Id venenatis a condimentum vitae. Ut enim blandit volutpat maecenas volutpat blandit aliquam. 
+             Pellentesque nec nam aliquam sem et. Ut sem nulla pharetra diam sit amet nisl suscipit adipiscing.
+            Tempor orci dapibus ultrices in iaculis. Rhoncus urna neque viverra justo nec ultrices dui sapien eget. 
+            Dignissim suspendisse in est ante in nibh. Aliquam malesuada bibendum arcu vitae elementum curabitur vitae.
+            In pellentesque massa placerat duis ultricies lacus sed. Amet aliquam id diam maecenas. 
+            Amet consectetur adipiscing elit duis tristique sollicitudin nibh. Hac habitasse platea dictumst quisque.
             <!-- Your text explanation goes here -->
           </p>
         </div>
@@ -187,8 +196,10 @@
             </div>
           
             <!-- Next and previous buttons -->
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            <i class="fa-solid fa-square-caret-left fa-2xl" id = "prev" onclick="plusSlides(-1)"></i>
+            <i class="fa-solid fa-square-caret-right fa-2xl"id = "next" onclick="plusSlides(1)"></i>
+            <!-- <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a> -->
           </div>
           <br>
           
@@ -210,22 +221,41 @@
              Viverra adipiscing at in tellus integer. 
              Sagittis vitae et leo duis ut diam. 
              Nisi vitae suscipit tellus mauris a diam.
+             Id venenatis a condimentum vitae. Ut enim blandit volutpat maecenas volutpat blandit aliquam. 
+             Pellentesque nec nam aliquam sem et. Ut sem nulla pharetra diam sit amet nisl suscipit adipiscing.
+            Tempor orci dapibus ultrices in iaculis. Rhoncus urna neque viverra justo nec ultrices dui sapien eget. 
+            Dignissim suspendisse in est ante in nibh. Aliquam malesuada bibendum arcu vitae elementum curabitur vitae.
+            In pellentesque massa placerat duis ultricies lacus sed. Amet aliquam id diam maecenas. 
+            Amet consectetur adipiscing elit duis tristique sollicitudin nibh. Hac habitasse platea dictumst quisque.
             <!-- Your text explanation goes here -->
           </p>
         </div>
     </div>
 
-    <div class="chart_container">
-        <div class="scatter-plot">
-          <!-- Insert your scatter plot here -->
-          <div id="scatterplot"></div>
-        </div>
+    <div class="row_container">
+       
         <div class="text-explanation">
           <h2>Scatter Plot Explanation</h2>
           <p>
-            This scatter plot demonstrates the relationship between X and Y variables.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+             Magna ac placerat vestibulum lectus mauris. 
+             At auctor urna nunc id cursus metus aliquam. 
+             Viverra adipiscing at in tellus integer. 
+             Sagittis vitae et leo duis ut diam. 
+             Nisi vitae suscipit tellus mauris a diam.
+             Id venenatis a condimentum vitae. Ut enim blandit volutpat maecenas volutpat blandit aliquam. 
+             Pellentesque nec nam aliquam sem et. Ut sem nulla pharetra diam sit amet nisl suscipit adipiscing.
+            Tempor orci dapibus ultrices in iaculis. Rhoncus urna neque viverra justo nec ultrices dui sapien eget. 
+            Dignissim suspendisse in est ante in nibh. Aliquam malesuada bibendum arcu vitae elementum curabitur vitae.
+            In pellentesque massa placerat duis ultricies lacus sed. Amet aliquam id diam maecenas. 
+            Amet consectetur adipiscing elit duis tristique sollicitudin nibh. Hac habitasse platea dictumst quisque.
             <!-- Your text explanation goes here -->
           </p>
+        </div>
+        <div class="stacked-bar-chart">
+            <!-- Insert your scatter plot here -->
+            <div id="stackedbarchart"></div>
         </div>
     </div>
 
