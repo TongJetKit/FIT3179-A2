@@ -16,8 +16,6 @@
         "as": ["attribute", "value"]
       },
       {"filter": "datum.attribute == selectedY"}
-      
-      
     ],
 
     "params": [
@@ -49,6 +47,42 @@
       ],
       "layer":[
         {
+          "transform": [
+           {
+             "window": [{"op": "rank", "as": "ranking"}],
+             "sort": [{"field": "value", "order": "descending"}]
+           },
+           {"filter": "datum.ranking == 1"},
+           {
+             "calculate": " datum['Country'] + ' has the highest ' + datum['attribute'] + ' : ' + datum['value']",
+             "as": "text_annotation_raw"
+           },
+           {
+             "calculate": "split(datum.text_annotation_raw, ';')",
+             "as": "text_annotation"
+           }],
+           "encoding": {
+             "x": {"field": "Happiness Score", "type": "quantitative"},
+             "y": {"field": "value", "type": "quantitative"}
+           },
+           "layer":[
+             {"mark":"point"},
+             {
+               "mark": {
+                 "type": "text",
+                 "align": "left",
+                 "dx":7 ,
+                 "fontStyle": "italic",
+                 "fontWeight": "bold",
+                 "fontSize": 10.5,
+                 "color": "#000000"
+               },
+             "encoding": {"text": {"field": "text_annotation"}}
+             }
+           ]
+         
+       },
+        {
 
           "mark": {"type": "point", "filled": true},
           "encoding": {
@@ -60,12 +94,11 @@
               },
               "tooltip": [
                 {"field": "value", "type": "nominal", "title":"Selected Y"},
-                {"field": "Happiness Score", "type": "quantitative"}
+                {"field": "Happiness Score", "type": "quantitative","format": ".1f"}
               ]
           }
         },
         {
-          
           "mark": {"type": "text", "fontSize": 13, "align": "right","fontWeight":"normal", "x": -35},
           "encoding": {
             "y": {"value":100},
@@ -73,6 +106,8 @@
             "angle": {"value": -90}
           }
         }
+        
+        
         
     ],
     "config": {
