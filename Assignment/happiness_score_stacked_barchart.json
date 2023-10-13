@@ -56,7 +56,7 @@
     {
      
       
-      "mark": {"type": "text", "dx": -15, "dy": 3, "color":"black"},
+      "mark": {"type": "text", "xOffset": -5, "color":"white", "aria": false, "align": "right"},
       "encoding": {
         "x": {"aggregate": "sum", "field": "value", "type": "quantitative","stack":"zero"},
         "y": {"field": "Region", "type": "nominal"},
