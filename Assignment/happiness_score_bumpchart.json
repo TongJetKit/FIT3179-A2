@@ -29,7 +29,13 @@
       "type": "ordinal",
       "title": "Rank"
     },
-    "color": {"field": "Country", "type": "nominal"}
+    "color": {"field": "Country", "type": "nominal"},
+    "tooltip": [
+      {"field": "Happiness Score", "type": "quantitative","format": ".1f"},
+      {"field": "Year", "type": "ordinal"},
+      {"field": "ranking", "type": "ordinal"}
+    ]
+
   },
   "config": {
     "view": {"stroke": "transparent"},
