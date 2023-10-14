@@ -158,7 +158,10 @@
       }
       
       
-    ]
+    ],
+    "config": {
+      "background":"#F9F3DF"
+    }
 
 
 
