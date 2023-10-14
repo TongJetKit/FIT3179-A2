@@ -80,7 +80,6 @@
  
   
   "config": {
-      "background": "#FFD36E",
     "axis": {
       "titleColor": "#527298",
       "labelColor": "#527298",

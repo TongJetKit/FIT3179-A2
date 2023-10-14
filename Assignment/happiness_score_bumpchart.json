@@ -40,8 +40,8 @@
   },
   "config": {
     "view": {"stroke": "transparent"},
-    "axis": {"labelOverlap": "parity"},
-    "background": "#FFD36E"
+    "axis": {"labelOverlap": "parity"}
+
     
   }
 }
