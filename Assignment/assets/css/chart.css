@@ -192,11 +192,10 @@ ol {
     width:60%;
     padding: 40px;
 }
+
 .scatter-plot {
     padding: 40px;
     flex: 30%; 
-
-    /* border-right: solid 2px #575555; */
 }
 
 
