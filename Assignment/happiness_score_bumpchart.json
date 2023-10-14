@@ -5,6 +5,7 @@
   },
   "width": 500,
   "height": 500,
+  "title": "Happiness Ranking of Countries From Different Regions from 2015 - 2023",
   "transform": [
     {
       "filter": "datum.Country == 'Australia' || datum.Country == 'New Zealand' || datum.Country == 'Malaysia' || datum.Country == 'Italy' || datum.Country == 'China' || datum.Country == 'Dominican Republic' || datum.Country == 'United States of America' || datum.Country == 'Mozambique' || datum.Country == 'Serbia' || datum.Country == 'Bolivia' || datum.Country == 'Finland' "
@@ -29,7 +30,7 @@
       "type": "ordinal",
       "title": "Rank"
     },
-    "color": {"field": "Country", "type": "nominal"},
+    "color": {"field": "Country", "type": "nominal", "scale": {"scheme":"category20"}},
     "tooltip": [
       {"field": "Happiness Score", "type": "quantitative","format": ".1f"},
       {"field": "Year", "type": "ordinal"},
