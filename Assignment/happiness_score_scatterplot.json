@@ -94,7 +94,7 @@
               },
               "tooltip": [
                 {"field": "Country", "type": "nominal"},
-                {"field": "value", "type": "nominal", "title":"Selected Y"},
+                {"field": "value", "type": "nominal", "title":"Selected Y","format": ".1f"},
                 {"field": "Happiness Score", "type": "quantitative","format": ".1f"}
               ]
           }
