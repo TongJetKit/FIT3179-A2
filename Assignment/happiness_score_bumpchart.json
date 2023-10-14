@@ -7,7 +7,7 @@
   "height": 500,
   "transform": [
     {
-      "filter": "datum.Country == 'Australia' || datum.Country == 'New Zealand' || datum.Country == 'Malaysia' || datum.Country == 'Italy' || datum.Country == 'China' || datum.Country == 'Dominican Republic' || datum.Country == 'United States of America' || datum.Country == 'Mozambique' || datum.Country == 'Serbia' || datum.Country == 'Bolivia' "
+      "filter": "datum.Country == 'Australia' || datum.Country == 'New Zealand' || datum.Country == 'Malaysia' || datum.Country == 'Italy' || datum.Country == 'China' || datum.Country == 'Dominican Republic' || datum.Country == 'United States of America' || datum.Country == 'Mozambique' || datum.Country == 'Serbia' || datum.Country == 'Bolivia' || datum.Country == 'Finland' "
     },
       {
         "window": [{"op": "rank", "as": "ranking"}],
