@@ -158,7 +158,10 @@
       }
       
       
-    ]
+    ],
+    "config": {
+      "background": "#FFD36E"
+    }
 
 
 
