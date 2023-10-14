@@ -181,16 +181,15 @@ ol {
     align-items: center;
     justify-content: space-between;
     row-gap: 30px;
-    padding: 3em 0;
+    padding: 2em 0;
     border-bottom: solid 2px #e5e5e5;
     box-shadow: inset 0px -8px 0px 0px #fff, inset 0px -10px 0px 0px #e5e5e5;
 }
 
 
 
-.stacked-bar-chart{
-    width:60%;
-    padding: 40px;
+.stacked-bar-chart{ 
+    padding: 40px 35px 40px 40px;
 }
 
 .scatter-plot {
@@ -248,7 +247,7 @@ img {vertical-align: middle;}
 
 /* Next & previous buttons */
 #prev, #next {
-  top: 3700px; 
+  top: 3900px; 
   cursor: pointer;
   position: absolute;
   padding: 16px;
