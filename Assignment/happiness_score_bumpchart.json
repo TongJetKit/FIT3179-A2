@@ -51,7 +51,7 @@
     "tooltip": [
       {"field": "Happiness Score", "type": "quantitative","format": ".1f"},
       {"field": "Year", "type": "ordinal"},
-      {"field": "ranking", "type": "ordinal"}
+      {"field": "ranking", "type": "ordinal", "title": "Ranking"}
     ]
 
   },
