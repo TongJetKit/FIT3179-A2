@@ -87,7 +87,8 @@
       "labelColor": "#527298",
       "labelFont": "sans-serif",
       "labelFontSize": 13,
-      "titleFontSize": 15
+      "titleFontSize": 15,
+      "grid": false
     }
   }
 }
