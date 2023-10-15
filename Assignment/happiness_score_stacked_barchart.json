@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 600,
   "height": 300,
-  "title": "Total Sum of Factor Affecting Happiness Across Each Region",
+  "title": "Total Sum of Factor Affecting Happiness Across Each Region in 2023",
   "resolve": {"scale": {"color": "shared","y":"shared"}},
   "data": {
     "url": "https://raw.githubusercontent.com/TongJetKit/FIT3179-A2/main/Assignment/dataset/dataset_clean.csv"
