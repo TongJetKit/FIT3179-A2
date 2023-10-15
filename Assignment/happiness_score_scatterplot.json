@@ -82,6 +82,45 @@
            ]
          
        },
+       {
+        "transform": [
+          {
+            "filter": "datum.value != 0"
+          },
+         {
+           "window": [{"op": "rank", "as": "ranking"}],
+           "sort": [{"field": "value", "order": "ascending"}]
+         },
+         {"filter": "datum.ranking == 1"},
+         {
+           "calculate": " datum['Country'] + ' has the lowest ' + datum['attribute'] + ' : ' + datum['value']",
+           "as": "text_annotation_raw"
+         },
+         {
+           "calculate": "split(datum.text_annotation_raw, ';')",
+           "as": "text_annotation"
+         }],
+         "encoding": {
+           "x": {"field": "Happiness Score", "type": "quantitative"},
+           "y": {"field": "value", "type": "quantitative"}
+         },
+         "layer":[
+           {"mark":"point"},
+           {
+             "mark": {
+               "type": "text",
+               "align": "left",
+               "dx":7 ,
+               "fontStyle": "italic",
+               "fontWeight": "bold",
+               "fontSize": 10.5,
+               "color": "#000000"
+             },
+           "encoding": {"text": {"field": "text_annotation"}}
+           }
+         ]
+       
+     },
         {
 
           "mark": {"type": "point", "filled": true},
@@ -94,7 +133,8 @@
               },
               "tooltip": [
                 {"field": "Country", "type": "nominal"},
-                {"field": "value", "type": "nominal", "title":"Selected Y","format": ".1f"},
+                {"field": "attribute","type":"ordinal", "title":"Selected Y"},
+                {"field": "value", "type": "nominal", "title":"Y Value","format": ".1f"},
                 {"field": "Happiness Score", "type": "quantitative","format": ".1f"}
               ]
           }
