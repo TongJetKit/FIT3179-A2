@@ -4,7 +4,7 @@
     "width": 300,
     "height": 300,
     "padding": 10,
-    "title": "Relationship Between the Factors and the Happiness Score",
+    "title": "Relationship Between the Factors and the Happiness Score in 2023",
     "data": {
       "url": "https://raw.githubusercontent.com/TongJetKit/FIT3179-A2/main/Assignment/dataset/dataset_clean.csv"
     },
