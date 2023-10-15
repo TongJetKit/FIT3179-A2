@@ -89,7 +89,8 @@
       "labelFontSize": 13,
       "titleFontSize": 15,
       "grid": false
-    }
+    },
+    "view": {"stroke": null}
   }
 }
 
