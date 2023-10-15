@@ -1,3 +1,3 @@
 # FIT3179-A2
 
-[Webpage Link](chart.html)
+[Webpage Link](index.html)
