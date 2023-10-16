@@ -96,7 +96,7 @@
           "color": {
             "field": "Social Support",  
             "type": "quantitative",
-            "scale": {"type": "linear", "scheme":"blues"}
+            "scale": {"type": "linear", "scheme":"teals"}
           },
           "tooltip": [
             {"field": "properties.NAME", "type": "nominal", "title": "Country"},
@@ -136,7 +136,7 @@
                   "type": "point",
                   "size": 200,
                   "shape": "diamond",
-                  "color":"#00ff1a"
+                  "color":"#000000"
                 }
               },
               {

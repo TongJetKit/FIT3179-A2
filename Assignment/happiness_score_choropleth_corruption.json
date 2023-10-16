@@ -96,7 +96,7 @@
           "color": {
             "field": "Perceptions of Corruption",  
             "type": "quantitative",
-            "scale": {"type": "linear", "scheme":"reds"}
+            "scale": {"type": "linear", "scheme":"browns"}
           },
           "tooltip": [
             {"field": "properties.NAME", "type": "nominal", "title": "Country"},
