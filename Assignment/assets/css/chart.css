@@ -179,7 +179,7 @@ ol {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     row-gap: 30px;
     padding: 2em 0 4em 0;
     border-bottom: solid 2px #e5e5e5;
@@ -188,9 +188,9 @@ ol {
 
 
 
-.stacked-bar-chart{ 
+/* .stacked-bar-chart{ 
     padding: 40px 35px 40px 40px;
-}
+} */
 
 .scatter-plot {
     padding: 40px;
