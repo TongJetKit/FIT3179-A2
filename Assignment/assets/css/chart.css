@@ -212,7 +212,7 @@ ol {
     text-align: left;
     flex: 60%;
     padding: 2em;
-    background-color: #DAFFFB;
+    background-color: #b0e0e7b9;
 }
 
 .text-explanation h2{
@@ -329,7 +329,7 @@ img {vertical-align: middle;}
 
 strong, b {
     font-weight: 600;
-    color: #666;
+    color: #181818;
 }
 *, *:before, *:after {
     box-sizing: inherit;
